@@ -58,7 +58,7 @@ class CourseImport(TaskSet):
         self.client.auth = None
 
         response = self.client.get("/home/")
-        if response.text.find("Currently signed in as:") < 0:
+        if response.text.find("account-username") < 0:
             raise Exception('Login failed.')
 
     def create_course(self, num):
